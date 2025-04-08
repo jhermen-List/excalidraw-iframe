@@ -68,6 +68,7 @@ export const getCollabServer = async (): Promise<{
   polling: boolean;
 }> => {
   const wsServerURL = import.meta.env.VITE_APP_WS_SERVER_URL;
+  console.log("#######", wsServerURL);
   if (wsServerURL) {
     return {
       url: wsServerURL,
