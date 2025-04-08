@@ -168,7 +168,7 @@ const initializeScene = async (opts: {
           display: none !important;
     }
 
-    .layer-ui__wrapper__top-right zen-mode-transition {
+    .App-menu App-menu_top{
       display: none !important;
     }
 
