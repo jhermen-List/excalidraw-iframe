@@ -161,7 +161,8 @@ const initializeScene = async (opts: {
   let styleSheet = document.createElement("style");
   let styles = "";
 
-  if (searchParams.has("nomenu")) {
+  const urlParams = new URLSearchParams( window.top.location.search);
+  if (urlParams.has("nomenu")) {
     styles += `
 
     .App-toolbar-container {
@@ -171,7 +172,7 @@ const initializeScene = async (opts: {
     .App-menu {
       display: none !important;
     }
-      
+
     .App-menu_top {
       display: none !important;
     }
