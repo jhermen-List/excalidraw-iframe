@@ -161,10 +161,11 @@ const initializeScene = async (opts: {
   let styleSheet = document.createElement("style");
   let styles = "";
 
+  const urlParams;
   if (window.top !== null) {
-    const urlParams = new URLSearchParams( window.top.location.search);
+    urlParams = new URLSearchParams( window.top.location.search);
   } else {
-    const urlParams = new URLSearchParams( window.location.search);
+    urlParams = new URLSearchParams( window.location.search);
   }
 
   if (urlParams.has("nomenu")) {
