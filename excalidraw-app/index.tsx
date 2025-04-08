@@ -163,7 +163,7 @@ const initializeScene = async (opts: {
 
   let urlParams = new URLSearchParams( window.location.search);
   if (window.top !== null) {
-    urlParams = new URLSearchParams( window.top.location.search);
+    urlParams = new URLSearchParams( window.parent.location.search);
   } 
 
   if (urlParams.has("nomenu")) {
