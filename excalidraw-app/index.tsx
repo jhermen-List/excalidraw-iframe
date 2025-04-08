@@ -158,7 +158,60 @@ const initializeScene = async (opts: {
 
   const localDataState = importFromLocalStorage();
 
-  
+  let styleSheet = document.createElement("style");
+  let styles = "";
+
+  /*
+  styles += `
+  label[title="Hand (panning tool) — H"]{
+    display: none !important;
+  }
+  label[title="Arrow — A or 5"]{
+        display: none !important;
+  }
+  label[title="Insert image — 9"]{
+        display: none !important;
+  }
+  button.App-toolbar__extra-tools-trigger{
+        display: none !important;
+  }
+  fieldset:has(> div.buttonList > button[title="Duplicate — Ctrl+D"]){
+    display: none !important;
+  }
+  label.control-label{
+    display: none !important;
+  }
+  div.ToolIcon__icon{
+      --lg-button-size: 4.25rem !important;
+      --lg-icon-size: 2rem !important;
+    }
+    label[title="Text — T or 8"]{
+        display: none !important;
+    }
+  `;
+  */
+
+  if (searchParams.has("nomenu")) {
+    styles += `
+
+    .App-toolbar-container {
+          display: none !important;
+    }
+
+    .layer-ui__wrapper__top-right zen-mode-transition {
+      display: none !important;
+    }
+
+    footer {
+      display: none !important;
+    }
+
+`;
+
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
+
+
 
   let scene: RestoredDataState & {
     scrollToContent?: boolean;

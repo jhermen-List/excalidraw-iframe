@@ -37,9 +37,6 @@ export const getStateForZoom = (
 
   if (urlParams.has("nozoom")) {
       nextZoom = 1 as NormalizedZoomValue;
-  }
-
-  if (urlParams.has("noscroll")) {
       sX = 0;
       sY = 0;
   } 
