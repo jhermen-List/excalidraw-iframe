@@ -33,11 +33,13 @@ export const getStateForZoom = (
   let sX = baseScrollX + zoomOffsetScrollX;
   let sY = baseScrollY + zoomOffsetScrollY;
 
-  if (excali_zoom !== undefined ||excali_zoom === false) {
+  const urlParams = new URLSearchParams( window.location.search);
+
+  if (urlParams.has("nozoom")) {
       nextZoom = 1 as NormalizedZoomValue;
   }
 
-  if (excali_scroll !== undefined ||excali_scroll === false) {
+  if (urlParams.has("noscroll")) {
       sX = 0;
       sY = 0;
   } 
