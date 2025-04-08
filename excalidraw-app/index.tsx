@@ -162,11 +162,7 @@ const initializeScene = async (opts: {
   let styles = "";
 
   let urlParams = new URLSearchParams( window.location.search);
-  if (window.top !== null) {
-    urlParams = new URLSearchParams( window.parent.location.search);
-  } 
-
-  if (urlParams.has("nomenu")) {
+    if (urlParams.has("nomenu")) {
     styles += `
 
     .App-toolbar-container {

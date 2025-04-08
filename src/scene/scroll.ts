@@ -40,11 +40,7 @@ export const centerScrollOn = ({
     let sY = viewportDimensions.height / 2 / zoom.value - scenePoint.y;
   
     let urlParams = new URLSearchParams( window.location.search);
-    if (window.top !== null) {
-      urlParams = new URLSearchParams( window.top.location.search);
-    } 
-
-    if (urlParams.has("noscroll")) {
+     if (urlParams.has("noscroll")) {
         sX = 0;
         sY = 0;
     } 

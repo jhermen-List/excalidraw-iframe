@@ -34,10 +34,6 @@ export const getStateForZoom = (
   let sY = baseScrollY + zoomOffsetScrollY;
 
   let urlParams = new URLSearchParams( window.location.search);
-  if (window.top !== null) {
-    urlParams = new URLSearchParams( window.top.location.search);
-  } 
-
   if (urlParams.has("nozoom")) {
       nextZoom = 1 as NormalizedZoomValue;
       sX = 0;
