@@ -39,7 +39,7 @@ export const centerScrollOn = ({
     let sX =  viewportDimensions.width / 2 / zoom.value - scenePoint.x;
     let sY = viewportDimensions.height / 2 / zoom.value - scenePoint.y;
   
-    let urlParams new URLSearchParams( window.location.search);
+    let urlParams = new URLSearchParams( window.location.search);
     if (window.top !== null) {
       urlParams = new URLSearchParams( window.top.location.search);
     } 

@@ -161,7 +161,7 @@ const initializeScene = async (opts: {
   let styleSheet = document.createElement("style");
   let styles = "";
 
-  let urlParams new URLSearchParams( window.location.search);
+  let urlParams = new URLSearchParams( window.location.search);
   if (window.top !== null) {
     urlParams = new URLSearchParams( window.top.location.search);
   } 
