@@ -33,11 +33,11 @@ export const getStateForZoom = (
   let sX = baseScrollX + zoomOffsetScrollX;
   let sY = baseScrollY + zoomOffsetScrollY;
 
-  if (window.excali_zoom !== undefined || window.excali_zoom == false) {
+  if (excali_zoom !== undefined ||excali_zoom === false) {
       nextZoom = 1 as NormalizedZoomValue;
   }
 
-  if (window.excali_scroll !== undefined || window.excali_scroll == false) {
+  if (excali_scroll !== undefined ||excali_scroll === false) {
       sX = 0;
       sY = 0;
   } 

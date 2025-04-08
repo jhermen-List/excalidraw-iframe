@@ -39,7 +39,7 @@ export const centerScrollOn = ({
     let sX =  viewportDimensions.width / 2 / zoom.value - scenePoint.x;
     let sY = viewportDimensions.height / 2 / zoom.value - scenePoint.y;
   
-    if (window.excali_scroll !== undefined || window.excali_scroll == false) {
+    if (excali_scroll !== undefined ||excali_scroll === false) {
         sX = 0;
         sY = 0;
     } 
