@@ -154,14 +154,19 @@ const initializeScene = async (opts: {
   const jsonBackendMatch = window.location.hash.match(
     /^#json=([a-zA-Z0-9_-]+),([a-zA-Z0-9_-]+)$/,
   );
-  const externalUrlMatch = window.location.hash.match(/^#url=(.*)$/);
-
+  const externalUrlMatch = window.location.hash.match(/^#url=(.*)$/)
+;
   const localDataState = importFromLocalStorage();
 
   let styleSheet = document.createElement("style");
   let styles = "";
 
-  const urlParams = new URLSearchParams( window.top.location.search);
+  if (window.top !== null) {
+    const urlParams = new URLSearchParams( window.top.location.search);
+  } else {
+    const urlParams = new URLSearchParams( window.location.search);
+  }
+
   if (urlParams.has("nomenu")) {
     styles += `
 
