@@ -158,6 +158,8 @@ const initializeScene = async (opts: {
 
   const localDataState = importFromLocalStorage();
 
+  
+
   let scene: RestoredDataState & {
     scrollToContent?: boolean;
   } = await loadScene(null, null, localDataState);

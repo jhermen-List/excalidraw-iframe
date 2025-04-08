@@ -36,11 +36,17 @@ export const centerScrollOn = ({
   viewportDimensions: { height: number; width: number };
   zoom: Zoom;
 }) => {
+    let sX =  viewportDimensions.width / 2 / zoom.value - scenePoint.x;
+    let sY = viewportDimensions.height / 2 / zoom.value - scenePoint.y;
+  
+    if (window.excali_scroll !== undefined || window.excali_scroll == false) {
+        sX = 0;
+        sY = 0;
+    } 
+
   return {
-//    scrollX: viewportDimensions.width / 2 / zoom.value - scenePoint.x,
-//    scrollY: viewportDimensions.height / 2 / zoom.value - scenePoint.y,
-      scrollX: 0,
-      scrollY: 0,
+      scrollX: sX,
+      scrollY: sY,
   };
 };
 
