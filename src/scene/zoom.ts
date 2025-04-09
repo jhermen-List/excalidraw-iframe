@@ -22,10 +22,11 @@ export const getStateForZoom = (
 
   const currentZoom = appState.zoom.value;
 
-  let urlParams = new URLSearchParams( window.location.search);
+  const urlParams = new URLSearchParams( window.location.search);
 
   if (urlParams.has("zoom")) {
-    nextZoom = urlParams.get("zoom") as NormalizedZoomValue;
+    let z = parseFloat(urlParams.get("zoom"));
+    nextZoom = z as NormalizedZoomValue;
   } 
 
   // get original scroll position without zoom
