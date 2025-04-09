@@ -161,28 +161,37 @@ const initializeScene = async (opts: {
   let styleSheet = document.createElement("style");
   let styles = "";
 
-  let urlParams = new URLSearchParams( window.location.search);
-    if (urlParams.has("nomenu")) {
-    styles += `
+  const urlParams = new URLSearchParams( window.location.search);
 
-    .App-toolbar-container {
-          display: none !important;
-    }
-
-    .App-menu {
-      display: none !important;
-    }
-
-    .App-menu_top {
-      display: none !important;
-    }
-
-    footer {
-      display: none !important;
+  let z = 1.0;
+    if (urlParams.has("zoom")) {
+      let p = urlParams.get("zoom");
+      if (p !== undefined && p !== null ) {
+        z = parseFloat(p);
+      }
+      appState.zoom.value = z;
     }
   
-  `;
-  }
+    if (urlParams.has("nomenu")) {
+      styles += `
+        .App-toolbar-container {
+              display: none !important;
+        }
+
+        .App-menu {
+          display: none !important;
+        }
+
+        .App-menu_top {
+          display: none !important;
+        }
+
+        footer {
+          display: none !important;
+        }
+      
+      `;
+    }
   styleSheet.innerText = styles;
   document.head.appendChild(styleSheet);
 
