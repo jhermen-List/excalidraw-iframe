@@ -161,17 +161,8 @@ const initializeScene = async (opts: {
   let styleSheet = document.createElement("style");
   let styles = "";
 
+  // hide menues
   const urlParams = new URLSearchParams( window.location.search);
-
-  let z = 1.0;
-    if (urlParams.has("zoom")) {
-      let p = urlParams.get("zoom");
-      if (p !== undefined && p !== null ) {
-        z = parseFloat(p);
-      }
-      appState.zoom.value = z;
-    }
-  
     if (urlParams.has("nomenu")) {
       styles += `
         .App-toolbar-container {
@@ -194,6 +185,14 @@ const initializeScene = async (opts: {
     }
   styleSheet.innerText = styles;
   document.head.appendChild(styleSheet);
+
+  // zoom to given factor (handeled in zoom.ts)
+  if (urlParams.has("zoom")) {
+    window.onload = function() {
+      document.getElementsByClassName("zoom-out-button")[0].click();
+    }  
+  }
+
 
 
   let scene: RestoredDataState & {
@@ -307,6 +306,8 @@ const initializeScene = async (opts: {
         }
       : { scene, isExternalScene: false };
   }
+
+  
   return { scene: null, isExternalScene: false };
 };
 

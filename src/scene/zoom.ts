@@ -23,7 +23,6 @@ export const getStateForZoom = (
   const currentZoom = appState.zoom.value;
 
   const urlParams = new URLSearchParams( window.location.search);
-
   let z = 1.0;
   if (urlParams.has("zoom")) {
     let p = urlParams.get("zoom");
