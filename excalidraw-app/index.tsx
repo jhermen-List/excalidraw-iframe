@@ -188,8 +188,15 @@ const initializeScene = async (opts: {
 
   // zoom to given factor (handeled in zoom.ts)
   if (urlParams.has("zoom")) {
+    setTimeout(() => { 
       let btn = document.getElementsByClassName("zoom-out-button")[0] as HTMLElement;
       btn.click();
+     }, 2000);
+     setTimeout(() => { 
+      let btn = document.getElementsByClassName("zoom-out-button")[0] as HTMLElement;
+      btn.click();
+     }, 10000);
+
   }
 
 
