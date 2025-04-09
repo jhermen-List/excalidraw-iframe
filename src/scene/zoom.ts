@@ -24,8 +24,12 @@ export const getStateForZoom = (
 
   const urlParams = new URLSearchParams( window.location.search);
 
+  let z = 1.0;
   if (urlParams.has("zoom")) {
-    let z = parseFloat(urlParams.get("zoom"));
+    let p = urlParams.get("zoom");
+    if (p !== undefined && p !== null ) {
+      z = parseFloat(p);
+    }
     nextZoom = z as NormalizedZoomValue;
   } 
 
