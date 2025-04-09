@@ -22,6 +22,12 @@ export const getStateForZoom = (
 
   const currentZoom = appState.zoom.value;
 
+  let urlParams = new URLSearchParams( window.location.search);
+
+  if (urlParams.has("zoom")) {
+    nextZoom = urlParams.get("zoom") as NormalizedZoomValue;
+  } 
+
   // get original scroll position without zoom
   const baseScrollX = appState.scrollX + (appLayerX - appLayerX / currentZoom);
   const baseScrollY = appState.scrollY + (appLayerY - appLayerY / currentZoom);
@@ -33,11 +39,10 @@ export const getStateForZoom = (
   let sX = baseScrollX + zoomOffsetScrollX;
   let sY = baseScrollY + zoomOffsetScrollY;
 
-  let urlParams = new URLSearchParams( window.location.search);
   if (urlParams.has("nozoom")) {
-      nextZoom = 1 as NormalizedZoomValue;
-      sX = 0;
-      sY = 0;
+    nextZoom = 1 as NormalizedZoomValue;
+    sX = 0;
+    sY = 0;
   } 
 
   return {
