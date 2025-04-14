@@ -48,11 +48,15 @@ export const getStateForZoom = (
   console.log("appState.scrollX", appState.scrollX, " appLayerX", appLayerX, " zoomOffsetScrollX", zoomOffsetScrollX, " sX", sX);
   console.log("appState.scrollY", appState.scrollY, " appLayerY", appLayerY, " zoomOffsetScrollY", zoomOffsetScrollY, " sY", sY);
 
-  if (urlParams.has("nozoom")) {
+  if (urlParams.has("nozoom") ) {
     nextZoom = 1 as NormalizedZoomValue;
     sX = 0;
     sY = 0;
   } 
+  if (urlParams.has("noscroll")) {
+    sX = 0;
+    sY = 0;
+} 
   if (urlParams.has("sX")) {
     let p = urlParams.get("sX");
     if (p !== undefined && p !== null ) {
