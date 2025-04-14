@@ -45,8 +45,8 @@ export const getStateForZoom = (
 
   console.log("------------ zoom.ts -------------------------------------------")
   console.log("currentZoom", currentZoom, " nextZoom",nextZoom);
-  console.log("baseScrollX", baseScrollX, " nextZoom", nextZoom, " zoomOffsetScrollX", zoomOffsetScrollX, " sX", sX);
-  console.log("baseScrollY", baseScrollY, " nextZoom", nextZoom, " zoomOffsetScrollY", zoomOffsetScrollY, " sY", sY);
+  console.log("appState.scrollX", appState.scrollX, " appLayerX", appLayerX, " zoomOffsetScrollX", zoomOffsetScrollX, " sX", sX);
+  console.log("appState.scrollY", appState.scrollY, " appLayerY", appLayerY, " zoomOffsetScrollY", zoomOffsetScrollY, " sY", sY);
 
   if (urlParams.has("nozoom")) {
     nextZoom = 1 as NormalizedZoomValue;
