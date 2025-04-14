@@ -38,6 +38,9 @@ export const centerScrollOn = ({
 }) => {
     let sX =  viewportDimensions.width / 2 / zoom.value - scenePoint.x;
     let sY = viewportDimensions.height / 2 / zoom.value - scenePoint.y;
+    console.log("------------ scroll.ts -------------------------------------------")
+    console.log("viewportDimensions.height", viewportDimensions.width, " zoom", zoom.value, " scenePoint", scenePoint.x, " sX", sX);
+    console.log("viewportDimensions.width", viewportDimensions.height, " zoom", zoom.value, " scenePoint", scenePoint.x, " sY", sY);
   
     const urlParams = new URLSearchParams( window.location.search);
      if (urlParams.has("noscroll")) {
