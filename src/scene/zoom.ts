@@ -53,6 +53,18 @@ export const getStateForZoom = (
     sX = 0;
     sY = 0;
   } 
+  if (urlParams.has("sX")) {
+    let p = urlParams.get("sX");
+    if (p !== undefined && p !== null ) {
+      sX = parseFloat(p);
+    }
+  } 
+  if (urlParams.has("sY")) {
+    let p = urlParams.get("sY");
+    if (p !== undefined && p !== null ) {
+      sY = parseFloat(p);
+    }
+  } 
 
   return {
     scrollX: sX, 
