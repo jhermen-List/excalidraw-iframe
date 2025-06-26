@@ -191,11 +191,11 @@ const initializeScene = async (opts: {
     setTimeout(() => { 
       let btn = document.getElementsByClassName("zoom-out-button")[0] as HTMLElement;
       btn.click();
-     }, 1500);
+     }, 500);
      setTimeout(() => { 
       let btn = document.getElementsByClassName("zoom-out-button")[0] as HTMLElement;
       btn.click();
-     }, 10000);
+     }, 5000);
 
   }
 
