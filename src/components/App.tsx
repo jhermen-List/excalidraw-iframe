@@ -1665,6 +1665,7 @@ class App extends React.Component<AppProps, AppState> {
   
   private isMobileBreakpoint = (width: number, height: number) => {
     if (new URLSearchParams(window.location.search).has("nomobile")) {
+      console.log("nomobile");
       return false;
     } 
     return (
