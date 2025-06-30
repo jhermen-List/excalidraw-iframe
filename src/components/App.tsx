@@ -1664,10 +1664,10 @@ class App extends React.Component<AppProps, AppState> {
 
   
   private isMobileBreakpoint = (width: number, height: number) => {
-    return (
     if (new URLSearchParams(window.location.search).has("nomobile")) {
       return false;
     } 
+    return (
       width < MQ_MAX_WIDTH_PORTRAIT ||
       (height < MQ_MAX_HEIGHT_LANDSCAPE && width < MQ_MAX_WIDTH_LANDSCAPE)
     );
