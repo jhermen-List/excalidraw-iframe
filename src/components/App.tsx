@@ -1662,12 +1662,10 @@ class App extends React.Component<AppProps, AppState> {
     });
   };
 
-
-  const urlParams = new URLSearchParams( window.location.search);
   
   private isMobileBreakpoint = (width: number, height: number) => {
     return (
-    if (urlParams.has("nomobile")) {
+    if (new URLSearchParams(window.location.search).has("nomobile")) {
       return false;
     } 
       width < MQ_MAX_WIDTH_PORTRAIT ||
