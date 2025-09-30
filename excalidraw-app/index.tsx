@@ -354,7 +354,7 @@ const ExcalidrawWrapper = () => {
   const [collabAPI] = useAtom(collabAPIAtom);
   const [, setCollabDialogShown] = useAtom(collabDialogShownAtom);
   const [isCollaborating] = useAtomWithInitialValue(isCollaboratingAtom, () => {
-    return isCollaborationLink(window.location.href);
+a    return isCollaborationLink(window.location.href);
   });
 
   useHandleLibrary({
@@ -483,7 +483,12 @@ const ExcalidrawWrapper = () => {
         // don't sync if local state is newer or identical to browser state
         if (isBrowserStorageStateNewer(STORAGE_KEYS.VERSION_DATA_STATE)) {
           const localDataState = importFromLocalStorage();
-          const username = importUsernameFromLocalStorage();
+          let username = importUsernameFromLocalStorage();
+          // List.lu
+          if (urlParams.has("username")) {
+            username = urlParams.get("username");
+          }
+          
           let langCode = languageDetector.detect() || defaultLang.code;
           if (Array.isArray(langCode)) {
             langCode = langCode[0];
