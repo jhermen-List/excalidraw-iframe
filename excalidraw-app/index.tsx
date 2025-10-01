@@ -485,6 +485,7 @@ const ExcalidrawWrapper = () => {
           const localDataState = importFromLocalStorage();
           let username = importUsernameFromLocalStorage();
           // List.lu
+          const urlParams = new URLSearchParams( window.location.search);
           if (urlParams.has("username")) {
             username = urlParams.get("username");
           }
