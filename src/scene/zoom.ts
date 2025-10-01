@@ -21,10 +21,11 @@ export const getStateForZoom = (
   const appLayerY = viewportY - appState.offsetTop;
 
   const currentZoom = appState.zoom.value;
-
+  const urlParams = new URLSearchParams( window.location.search);
+  
   //
   //let z = 1.0;
-  //const urlParams = new URLSearchParams( window.location.search);
+  //
   //if (urlParams.has("zoom")) {
   //  let p = urlParams.get("zoom");
   //  if (p !== undefined && p !== null ) {
