@@ -5,16 +5,6 @@ export const getNormalizedZoom = (zoom: number): NormalizedZoomValue => {
   return Math.max(MIN_ZOOM, Math.min(zoom, 30)) as NormalizedZoomValue;
 };
 
-var zoomAllowed = true;
-const urlParams = new URLSearchParams( window.location.search);
-if (urlParams.has("zoom")) zoomAllowed = false;
-if (urlParams.has("releasezoom")) {
-      let t = urlParams.get("releasezoom");
-      setTimeout(() => { 
-          zoomAllowed = true;
-       }, t);
-}
-
 export const getStateForZoom = (
   {
     viewportX,
@@ -32,16 +22,16 @@ export const getStateForZoom = (
 
   const currentZoom = appState.zoom.value;
 
-  if (! zoomAllowed ) {
-    let z = 1.0;
-    if (urlParams.has("zoom")) {
-      let p = urlParams.get("zoom");
-      if (p !== undefined && p !== null ) {
-        z = parseFloat(p);
-      }
-      nextZoom = z as NormalizedZoomValue;
-    } 
-  }
+  //
+  //let z = 1.0;
+  //const urlParams = new URLSearchParams( window.location.search);
+  //if (urlParams.has("zoom")) {
+  //  let p = urlParams.get("zoom");
+  //  if (p !== undefined && p !== null ) {
+  //    z = parseFloat(p);
+  //  }
+  //  nextZoom = z as NormalizedZoomValue;
+  //} 
 
   // get original scroll position without zoom
   const baseScrollX = appState.scrollX + (appLayerX - appLayerX / currentZoom);
