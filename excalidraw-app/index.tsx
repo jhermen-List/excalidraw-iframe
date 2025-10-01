@@ -354,7 +354,7 @@ const ExcalidrawWrapper = () => {
   const [collabAPI] = useAtom(collabAPIAtom);
   const [, setCollabDialogShown] = useAtom(collabDialogShownAtom);
   const [isCollaborating] = useAtomWithInitialValue(isCollaboratingAtom, () => {
-a    return isCollaborationLink(window.location.href);
+    return isCollaborationLink(window.location.href);
   });
 
   useHandleLibrary({
