@@ -115,7 +115,7 @@ class Collab extends PureComponent<Props, CollabState> {
     if (urlParams.has("username")) {
       uname = urlParams.get("username");
     }
-    console.log("Collab.tsx Using Username:", username);
+    console.log("Collab.tsx Using Username:", uname);
     this.state = {
       errorMessage: "",
       username: uname || "",
