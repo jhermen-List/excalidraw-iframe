@@ -109,9 +109,16 @@ class Collab extends PureComponent<Props, CollabState> {
 
   constructor(props: Props) {
     super(props);
+    let uname = importUsernameFromLocalStorage();
+    // List.lu
+    const urlParams = new URLSearchParams( window.location.search);
+    if (urlParams.has("username")) {
+      uname = urlParams.get("username");
+    }
+    console.log("Collab.tsx Using Username:", username);
     this.state = {
       errorMessage: "",
-      username: importUsernameFromLocalStorage() || "",
+      username: uname || "",
       activeRoomLink: "",
     };
     this.portal = new Portal(this);
