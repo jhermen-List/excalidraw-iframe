@@ -172,14 +172,27 @@ export const actionResetZoom = register({
   viewMode: true,
   trackEvent: { category: "canvas" },
   perform: (_elements, appState, _, app) => {
+    let z = 1.0;
+    let sX = appState.width / 2 + appState.offsetLeft;
+    let sY = appState.height / 2 + appState.offsetTop;
+    // if we have zoom= parameter, set back to that zoom and location when reset-zoom button is triggered.
+    const urlParams = new URLSearchParams( window.location.search);
+    if (urlParams.has("zoom")) {
+      let p = urlParams.get("zoom");
+      if (p !== undefined && p !== null ) {
+        z = parseFloat(p);
+      }
+      sX = 0;
+      sY = 0;
+    } 
     return {
       appState: {
         ...appState,
         ...getStateForZoom(
           {
-            viewportX: appState.width / 2 + appState.offsetLeft,
-            viewportY: appState.height / 2 + appState.offsetTop,
-            nextZoom: getNormalizedZoom(1),
+            viewportX: sX,
+            viewportY: sY,
+            nextZoom: getNormalizedZoom(z),
           },
           appState,
         ),
