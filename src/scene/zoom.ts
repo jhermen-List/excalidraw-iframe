@@ -45,7 +45,7 @@ export const getStateForZoom = (
   let sX = baseScrollX + zoomOffsetScrollX;
   let sY = baseScrollY + zoomOffsetScrollY;
 
-  console.log("------------ zoom.ts -------------------------------------------")
+  console.log("------------ zoom.ts - updated-------------------------------------------")
   console.log("currentZoom", currentZoom, " nextZoom",nextZoom);
   console.log("appState.scrollX", appState.scrollX, " appLayerX", appLayerX, " zoomOffsetScrollX", zoomOffsetScrollX, " sX", sX);
   console.log("appState.scrollY", appState.scrollY, " appLayerY", appLayerY, " zoomOffsetScrollY", zoomOffsetScrollY, " sY", sY);
