@@ -489,6 +489,7 @@ const ExcalidrawWrapper = () => {
           if (urlParams.has("username")) {
             username = urlParams.get("username");
           }
+          console.log("Using Username:", username);
           
           let langCode = languageDetector.detect() || defaultLang.code;
           if (Array.isArray(langCode)) {
