@@ -177,8 +177,20 @@ const initializeScene = async (opts: {
           display: none !important;
         }
 
-        footer {
+        .footer-center {
           display: none !important;
+        }
+
+        .layer-ui__wrapper__footer-right {
+          display: none !important;
+        }
+
+        .undo-redo-buttons { 
+          display: none !important;
+        }
+
+        footer {
+          /* display: none !important; */
         }
       
       `;
