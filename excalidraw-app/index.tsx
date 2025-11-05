@@ -170,7 +170,7 @@ const initializeScene = async (opts: {
         }
 
         .App-menu {
-          display: none !important;
+          /* display: none !important; */
         }
 
         .App-menu_top {
