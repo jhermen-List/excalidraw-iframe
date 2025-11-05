@@ -189,6 +189,14 @@ const initializeScene = async (opts: {
           display: none !important;
         }
 
+        .zoom-out-button { 
+          display: none !important;
+        }
+
+        .zoom-in-button { 
+          display: none !important;
+        }
+
         footer {
           /* display: none !important; */
         }
