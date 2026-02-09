@@ -110,6 +110,7 @@ window.EXCALIDRAW_THROTTLE_RENDER = true;
 
 let isSelfEmbedding = false;
 
+/* NO PRETZEL CHECK
 if (window.self !== window.top) {
   try {
     const parentUrl = new URL(document.referrer);
@@ -121,6 +122,7 @@ if (window.self !== window.top) {
     // ignore
   }
 }
+*/
 
 const languageDetector = new LanguageDetector();
 languageDetector.init({
